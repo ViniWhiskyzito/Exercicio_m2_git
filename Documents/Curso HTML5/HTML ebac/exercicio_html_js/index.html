@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de Números</title>
+</head>
+
+<body>
+    <form id="meuForm">
+        <label for="campoA">Campo A:</label>
+        <input type="number" id="campoA" name="campoA" required><br><br>
+
+        <label for="campoB">Campo B:</label>
+        <input type="number" id="campoB" name="campoB" required><br><br>
+
+        <button type="button" onclick="validarForm()">Submeter</button>
+    </form>
+
+    <p id="resultado"></p>
+
+    <script>
+        function validarForm() {
+            var campoA = parseFloat(document.getElementById("campoA").value);
+            var campoB = parseFloat(document.getElementById("campoB").value);
+
+            if (campoB > campoA) {
+                document.getElementById("resultado").textContent = "Formulário válido: B é maior que A.";
+            } else {
+                document.getElementById("resultado").textContent = "Formulário inválido: B deve ser maior que A.";
+            }
+        }
+    </script>
+</body>
+
+</html>
